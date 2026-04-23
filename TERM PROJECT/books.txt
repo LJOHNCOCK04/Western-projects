@@ -1,0 +1,26 @@
+Ashes of the Fallen Crown,Declan Marr,9781472291184,True
+Beneath the Frozen Sky,Callum Reeves,9781628894410,True
+Echoes of the Starforge,Mira Solis,9780598823417,True
+Garden of Hollow Dreams,Isabelle Crane,9781490027814,True
+Harry Potter and the Philosopher's Stone,J. K. Rowling,9780747532743,False
+Moonlit Prophecy,Aria Fenwick,9781335598120,True
+Rise of the Ember King,Jonas Hale,9781984432109,True
+Rivers of the Dusklands,Maeve Thornfield,9781327789120,True
+Shadows of the Deep,Caleb R. Winters,9780678891204,True
+Storm over Blackwater,Helena Ward,9781775590021,True
+The Clockmaker’s Secret,Ella Thorn,9781452297742,True
+The Crystal Dominion,Lydia Rowan,9781634421187,True
+The Forgotten Heir,Rowan Ellison,9781732201198,False
+The Hollow King's Pact,Julian Crestwood,9781845590023,True
+The Iron Serpent,Victor Hale,9780814479201,True
+The Last Oracle,Tobias Grey,9780447789123,True
+The Lost Cartographer,Sophia Merrin,9780547789123,True
+The Midnight Archivist,Serena Vale,9781950047822,True
+The Obsidian Voyage,Corin Halden,9781784432101,True
+The Painted Horizon,Clara Duvall,9780987765432,True
+The Serpent of Winterdeep,Naomi Vale,9781497784412,True
+The Seventh Lantern,Orion Blake,9780317784421,True
+The Silver Gate,Marion Blake,9780314457821,True
+The Whispering Labyrinth,Elara Quinn,9781684429910,True
+Voyage of the Starbound,Marcus Vell,9780527783410,True
+Whispers in the Fog,Daniel Crest,9781256679034,True
