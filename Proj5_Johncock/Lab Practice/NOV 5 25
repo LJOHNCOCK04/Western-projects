@@ -1,0 +1,50 @@
+#Leemon Johncock
+#Lab practice examples 
+# CS 1110 - COMPUTER SCIENCE I LAB
+# LAB EXERCISE 9 (11/05/2025)
+
+
+# 1. Tuple as a Function Return Value
+def analyze_numbers(numbers):
+    
+    small_number =  min(numbers)
+    big_number = max(numbers)
+    average = sum(numbers)/len(numbers)
+    return (small_number , big_number, average)
+   
+
+# 2. Tuple Operations and Count
+def print_tuple(numbers):
+    # TODO:
+    count_3 = numbers.count(3)
+    print(f"Count of 3:{count_3}")
+    first_index = numbers.index(3)
+    try:
+        second_index = numbers.index(3,first_index+1)
+    except ValueError:
+        second_index = "No second occurrence"
+    print("Indext of second 3:", second_index)
+
+    doubled = tuple(num * 2 for num in numbers)
+    print("Double tuple:",doubled)
+    
+    
+
+
+# Main function
+def main():
+    numbers = (3, 7, 10, 2, 9, 3, 8, 15, 4, 19)
+
+    # Exercise 1 Output
+    # TODO:
+    result = analyze_numbers(numbers)
+    print (f"Min:{result[0]}\nMax:{result[1]}\nAvg:{result[2]}")
+
+    # Exercise 2 Output
+    print_tuple(numbers)
+    
+
+
+# Run program
+if __name__ == "__main__":
+    main()

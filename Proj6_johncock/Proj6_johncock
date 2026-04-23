@@ -1,0 +1,117 @@
+def read_file(): 
+# Reads the movie file and builds the movie dictionary.
+# Each line contains an actor followed by the movies they appear in.
+
+    try:
+        movie_dict = {}     # create main dictionary once
+
+        with open("movies.txt", "r") as file:
+            for line in file:
+                line_list = list(line.strip().split(","))
+                build_dictionary(movie_dict, line_list)   # pass main dict
+
+    except FileNotFoundError:
+        print("ERROR, file could not be found")
+
+    return movie_dict   # return full dictionary
+
+
+def build_dictionary(movie_dict, line_list):
+# Adds the actor and their movies to the movie dictionary.
+# Dictionary format: movie (key) → set of actors (value)
+
+    actor = line_list[0].strip()
+    movies = line_list[1:]  # multiple movies
+
+    for movie in movies:
+        movie = movie.strip()
+        if movie not in movie_dict:
+            movie_dict[movie] = set()
+        movie_dict[movie].add(actor)
+
+    return movie_dict
+
+
+def search(option, movie_dict, movies_split):
+# Performs a set operation between the actors of two movies.
+# | = union, & = intersection, ^ = symmetric difference
+
+    movie1 = movies_split[0].strip()
+    movie2 = movies_split[1].strip()
+
+    print(f"Search Query : {movie1} {option} {movie2}\n")
+
+    if movie1 not in movie_dict or movie2 not in movie_dict:
+        print("One or both of the movies entered is not found. Please try again")
+        return
+
+    if option == "|":
+        print(movie_dict[movie1] | movie_dict[movie2])
+    elif option == "&":
+        print(movie_dict[movie1] & movie_dict[movie2])
+    elif option == "^":
+        print(movie_dict[movie1] ^ movie_dict[movie2])
+
+
+def find_co_actors(actor, movie_dict):
+# Finds all co-actors who appeared in any movie with the given actor.
+
+    co_actors = set()
+
+    for movie, actors in movie_dict.items():
+        if actor in actors:
+            co_actors.update(actors)
+
+    co_actors.discard(actor)
+
+    print(f"\n{actor} Co-actors:\n{co_actors}")
+
+
+def main():
+# Displays the menu and processes user choices.
+
+    movie_dict = read_file()
+
+    while True:
+        print("\nmenu:\na. Enter two movies separated by ( &, | , ^)\nb. Enter a name of an actor and find his/her co-actors\nc. Exit")
+        option = input("\nEnter your choice (a/b/c): ").upper()
+
+        if option == "B":
+            actor = input("\nEnter an actor name: ")
+            find_co_actors(actor, movie_dict)
+
+        elif option == "A":
+        # User enters two movie names separated by &, |, or ^
+        # This section verifies the operator and splits the movie names.
+
+            while True:
+                movies = input("\nEnter two movies separated by ( &, | , ^): ")
+
+                if "&" in movies:
+                    op = "&"
+                elif "|" in movies:
+                    op = "|"
+                elif "^" in movies:
+                    op = "^"
+                else:
+                    print("Wrong Input. Re-enter.\n")
+                    continue
+
+                movies_split = movies.split(op)
+                if len(movies_split) != 2:
+                    print("\nERROR. Must enter exactly two movies.\n")
+                    continue
+
+                search(op, movie_dict, movies_split)
+                break
+
+        elif option == "C":
+            print("\nExiting the program.\n")
+            break
+
+        else:
+            print("Invalid choice. Please enter (a/b/c). ")
+
+
+if __name__ == "__main__":
+    main()

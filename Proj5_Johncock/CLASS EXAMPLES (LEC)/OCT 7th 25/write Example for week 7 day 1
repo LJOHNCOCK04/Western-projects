@@ -1,0 +1,15 @@
+def main():
+    # Open a file
+    output_file=open("names.txt",'w')
+
+    # Process the file
+    output_file.write("\nAlice")
+    output_file.write("\nBob")
+    output_file.write("\nZoe")
+
+    # Close the file
+    output_file.close()
+
+
+if __name__== '__main__':
+    main()

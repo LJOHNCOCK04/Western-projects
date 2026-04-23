@@ -1,0 +1,24 @@
+# Leemon Johncock
+# using a string slicing to help a user creating a account 
+import random
+def password_making():
+    password = input("Enter in your password, \n it must have one letter\n one capital letter \n one number\n and one symbol:\n ")
+    length = int(password.count)
+
+    while length < 8:
+        print('password must be eight characters or longer')
+        password = input("Enter in your password, \n it must have one letter\n one capital letter \n one number\n and one symbol:\n ")
+        length = password.count
+        
+    
+    
+def google_information():
+    user_first = input("Enter your first name: ")
+    user_last = input ("enter your second name: ")
+    ch1 = user_first[0:3]
+    ch2 = user_last[0:3]
+    user_email =(f"your username is {ch1+ch2}@gmail.com")
+    print (user_email)
+    password_making()
+google_information()
+

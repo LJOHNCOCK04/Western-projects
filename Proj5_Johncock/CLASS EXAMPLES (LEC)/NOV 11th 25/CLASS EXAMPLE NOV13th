@@ -1,0 +1,23 @@
+def the_thing_we_have_to_code(transactions):
+    unique_buyers_list = []
+    for item in transactions:
+        if item[2] > 0.0:
+            unique_buyers_list += item [0]
+    unique_buyers = set(unique_buyers_list)
+    return unique_buyers
+
+
+
+def main():
+    transactions = [
+    ("Alice", "Apple", 2.0)
+    ("Bob", "Banana", 1.5)
+    ("Alice", "Orange",3.0 )
+    ("Charlie","Apple",2.5)
+    ("Bob","Orange",1.8)
+    ("Alice","Banana",1.2)
+    ("Zoe","",0.0)
+    ]
+    the_thing_we_have_to_code(transactions)
+
+main()

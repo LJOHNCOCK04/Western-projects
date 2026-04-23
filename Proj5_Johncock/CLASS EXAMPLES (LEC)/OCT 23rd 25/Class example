@@ -1,0 +1,60 @@
+def string_upper():
+    st1='cs1110'
+    st2=st1.upper()
+    st3=st1[0]
+    print(st2)
+    print(st3)
+
+def find_function():
+    st1='cs1110'
+    print(st1.find('1'))
+
+def replace_function():
+    st1='cs1110'
+    st2=st1.replace('10','20')
+    print(st2)
+
+def start_with_function():
+    st1='cs1110'
+    print(st1.startswith('cs'))
+
+def repeating_strings_with_math():
+    st1='a'
+    st2 = st1+st1+st1+st1+st1 #too tedious and easier when multipling
+    print(st2)
+
+    st3 = st1*30
+    print(st3)
+
+def removing_spaces():
+    st1 = 'a b c'
+    print(st1.split) # this will make a list of [a,b,c]
+
+    st2='10/23/2025'
+    print(st2.split('/')) # this will remove the '/' and make it into a list
+
+
+def class_example1():  # similar as lab 10/22/25 first example
+    mystring = 'abc1234'
+    digit = 0
+    for ch in mystring:
+        if ch.isdigit():
+            digit += 1
+    print(digit)
+#class_example1()
+
+def class_example2():
+    st1 = 'YouWillSolveThePracticeProblemsOfChapterEight'
+    result = ""
+    for ch in st1:
+        if ch.isupper():
+            result += " " + ch
+        else:
+            result += ch
+    result.lower()
+            
+
+    
+    print (result.capitalize())
+    
+class_example2()

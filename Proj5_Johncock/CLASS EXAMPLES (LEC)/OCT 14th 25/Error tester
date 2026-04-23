@@ -1,0 +1,22 @@
+def main():
+    v = input("enter 1 or 2: ")
+    if v == 1:
+    try:
+        x=float('abc123')
+        print('the conversion is complete.')
+    except IOError:
+        print('this code cause an IOError')
+    except ValueError:
+        print('this code caused a valueError')
+    print('The end.')
+
+    if v == 2:
+        try:
+            x= int(value)
+        except ValueError
+            print(f'{value} could not be converted to an integer')
+        else:
+            print()
+        finally():
+
+

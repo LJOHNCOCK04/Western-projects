@@ -1,0 +1,219 @@
+import random
+def empty_dict():
+    dict1 = dict()
+    print(dict1)
+
+def making_a_dict():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    #print(dict1)
+    for key in dict1:
+        print(key, dict1[key])
+
+
+
+def making_a_dict_edit():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    dict1['c']='Zoe'
+    print(dict1)
+
+    dict1['b'] ='Alex'
+    print(dict1)
+
+def making_a_dict_error_avoiding():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    if 'c' in dict1:
+        print ( dict1['c'])
+
+def making_a_dict_deleting():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    del dict1['a'] # deletes the whole value and the key
+    print (dict1)
+
+    del dict1 #deletes the whole dictionary 
+    print(dict1)
+
+def making_a_dict_length():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    print (len(dict1))
+
+def functions_for_dict():
+    dict1={
+        'a':'Alice','b':'bob'
+        }
+    #CLEAR---- clear the dictionar but wont delete the whole thing
+    dict1.clear()
+
+    #GET---- gets value from key and retruns none(unless edited) if nothing is found
+    value=dict1.get('a')
+    print (value)
+    value=dict1.get('c', 'the key is not found!')
+    print (value)
+
+    #ITEMS----
+    pairs =dict1.items()
+    print(pairs)
+# OUTPUT: dict_items ([(whatever in dict)])
+
+# to fix put:
+    for key,value in pairs:
+        print (key,value)
+
+    #KEYS---- # find the keys and puts them in a list 
+    keys = dict1.keys()
+    for k in keys :
+        print(k)
+
+    #POP---- #retrun and removes a key from dict
+    print(dict1.pop('b'))
+    print(dict1)
+
+    #POPITEM---- returns a tuple
+    dict1={
+        'a':'Alice','b':'bob', 'c': 'Zoe'
+        }
+    print(dict1.popitem('b'))
+    print(dict1)
+
+    #VALUES----
+    values = (dict1.values())
+
+    for v in values:
+        print(v)
+
+
+def making_a_dict_CLASS_EXAMPLE():
+    dict1 = {
+        'a':[1,2,3],10:('a','b'), 1.5:'Zoe'
+    }
+    value = dict1.get('a')
+    value[1]=20
+    dict1['a']=value
+    print(dict1)
+
+def making_a_dict_combining():
+    dict1= {
+        'a':'Alice','b':'bob','c':'Zoe'
+    }
+
+    dict2 = {
+        'd':"david", 's':'Sophie', 'c':'Adam'
+    }
+# the dict on the right of the bar will override the one on the left.
+# combinding will always replace any similar keys.
+    dict3 = dict1 | dict2
+
+    print(dict3)
+
+def making_a_dict_updating():
+    dict1= {
+        'a':'Alice','b':'bob','c':'Zoe'
+    }
+
+    dict2 = {
+        'd':"david", 's':'Sophie', 'c':'Adam'
+    }
+    dict1|=dict2
+    print(dict1)
+
+
+
+
+def in_class_example_practice():
+    #ways to make a dict
+    grade_list_dict= {
+        {'grade': 'A' , 'Name':"John"},
+        {'grade': 'A+', 'Name':"Emily"},
+        {'grade': 'B' , 'Name':"Betty"},
+        {'grade': 'C' , 'Name':"Mike"},
+        {'grade': 'A' , 'Name':"Ashley"}
+    }
+    list_grade_dict={
+        {'John': 'A'},
+        {'Emily':'A+'},
+        {'Betty':'B'},
+        {'Mike':'C'},
+        {'Ashley':'A'}
+    }
+
+def Class_example_2():
+
+    UNITED_STATES_CAPITALS = {
+        "Alabama": "Montgomery",
+        "Alaska": "Juneau",
+        "Arizona": "Phoenix",
+        "Arkansas": "Little Rock",
+        "California": "Sacramento",
+        "Colorado": "Denver",
+        "Connecticut": "Hartford",
+        "Delaware": "Dover",
+        "Florida": "Tallahassee",
+        "Georgia": "Atlanta",
+        "Hawaii": "Honolulu",
+        "Idaho": "Boise",
+        "Illinois": "Springfield",
+        "Indiana": "Indianapolis",
+        "Iowa": "Des Moines",
+        "Kansas": "Topeka",
+        "Kentucky": "Frankfort",
+        "Louisiana": "Baton Rouge",
+        "Maine": "Augusta",
+        "Maryland": "Annapolis",
+        "Massachusetts": "Boston",
+        "Michigan": "Lansing",
+        "Minnesota": "Saint Paul",
+        "Mississippi": "Jackson",
+        "Missouri": "Jefferson City",
+        "Montana": "Helena",
+        "Nebraska": "Lincoln",
+        "Nevada": "Carson City",
+        "New Hampshire": "Concord",
+        "New Jersey": "Trenton",
+        "New Mexico": "Santa Fe",
+        "New York": "Albany",
+        "North Carolina": "Raleigh",
+        "North Dakota": "Bismarck",
+        "Ohio": "Columbus",
+        "Oklahoma": "Oklahoma City",
+        "Oregon": "Salem",
+        "Pennsylvania": "Harrisburg",
+        "Rhode Island": "Providence",
+        "South Carolina": "Columbia",
+        "South Dakota": "Pierre",
+        "Tennessee": "Nashville",
+        "Texas": "Austin",
+        "Utah": "Salt Lake City",
+        "Vermont": "Montpelier",
+        "Virginia": "Richmond",
+        "Washington": "Olympia",
+        "West Virginia": "Charleston",
+        "Wisconsin": "Madison",
+        "Wyoming": "Cheyenne"
+    }
+    keep_going = 'y'
+    while keep_going[0] == 'y':
+        random_state = random.choice(list(UNITED_STATES_CAPITALS.keys()))
+        guesss=input(f"what is the capital of {random_state}")
+        if UNITED_STATES_CAPITALS.get(random_state) == guesss:
+            print ("CORECT")
+            corect=+1
+        else:
+            print('WORNG')
+            wrong=+1
+        print(f"you have {corect} and {wrong}")
+    keep_going= input("If you want to keep going tyoe yes. if not type anything else: ")
+
+Class_example_2()
+
+    
+    
+

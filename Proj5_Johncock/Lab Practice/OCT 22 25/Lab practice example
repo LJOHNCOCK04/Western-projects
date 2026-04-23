@@ -1,0 +1,51 @@
+# Digit Counting and summation
+#palindrome checking
+#initials from a full name
+#replaceing words in a sentence
+#Leemon Johncock
+
+
+def count_and_sum_digits():
+
+    string = input("Enter your string: ")
+    digit_count = 0
+    digit_sum = 0
+
+    for ch in string:
+        if ch.isdigit():
+            digit_count += 1
+            digit_sum += int(ch)
+
+
+    print(f"count={digit_count}")
+    print(f"sum={digit_sum}")
+
+def palindrome_check():
+    string = input("Enter a string: ")
+    new_string = string.lower()
+    
+    if new_string == new_string[::-1]:
+        print("True (Palindrome)")
+    else:
+        print("false (Not palindrome)")
+
+def print_initinals():
+    name = input("Enter full name: ")
+    name1 = name.split()
+
+    first = name1[0]
+    middle = name1[1]
+    last = name1[2]
+    print (f"Initials:{first[0]}.{middle[0]}.{last[0]}")
+def replace_word():
+    sentence = input("Enter your sentence: ")
+    sentence1 = sentence.strip()
+    sentence2 = sentence1.replace('python', 'caffeine').replace('Python', 'Caffeine')
+    print(sentence2)
+        
+def main():
+    count_and_sum_digits()
+    palindrome_check()
+    print_initinals()
+    replace_word()
+main()

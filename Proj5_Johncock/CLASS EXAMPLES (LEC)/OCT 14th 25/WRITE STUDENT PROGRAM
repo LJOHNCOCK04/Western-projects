@@ -1,0 +1,54 @@
+# write/edit student program lecture
+# 10/14/25
+
+import os
+def Write(name, grade1, grade2, output_file):
+    output_file.write(name+'\n')
+    output_file.write(str(grade1)+'\n') 
+    output_file.write(str(grade2)+'\n')
+
+
+def edit():
+    search=input("Enter Student's name: ")
+    new_grade = float(input("enter the new grade: "))
+
+    with open('Students.txt', 'r') as input_file, open("temp.txt", 'w') as output_file:
+        name = input_file.readline()
+        name = name.rstrip("\n")
+        while name!= '':
+            grade1 = input_file. readline()
+            grade2 = input_file.readline()
+            if name  == search:
+                output_file.write( name +'\n')
+                output_file.write(str(new_grade)+'\n')
+                output_file.write(grade2)
+            else:
+                output_file.write(name + '\n')
+                output_file.write(grade1)
+                output_file.write(grade2)
+            name= input_file.readline()
+            name = name.rstrip("\n")
+    os.remove("students.txt")
+    os.rename("temp.txt", "students.txt")
+    
+
+def main():
+    choice=input("Type 'y' to edit: ")
+    if choice != 'y':
+        number_students=int(input("enter amount of students ") )
+        with open('Students.txt', 'w') as output_file:
+            i=0
+            while i != number_students:
+        
+                name=input("Name of student ")
+                grade1=float(input("Exam 1 score "))
+                grade2=float(input('Exam 2 score '))
+                Write(name,grade1,grade2,output_file)    
+                i=i+1
+    else:
+        edit()
+
+
+if __name__=='__main__':
+    main()
+    

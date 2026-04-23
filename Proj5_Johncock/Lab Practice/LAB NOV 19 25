@@ -1,0 +1,114 @@
+class Student:
+    count = 1   # TODO: use this in __init__
+
+    def __init__(self, name):
+        
+        
+        self.name = name
+        self.grade = []
+        self.ID = f"S{Student.count:03d}"
+        Student.count += 1
+        
+        
+
+    def add_grade(self, grade):
+        
+        
+        if grade > 100 or grade < 0:
+            print("Invalid Grade. Must be between 0 and 100.")
+        else:
+            
+            self.grade.append(grade)
+        
+
+    def get_average(self):
+       
+        if len(self.grade) == 0:
+            print ("No grades available.")
+        length = len(self.grade)
+        total = sum(self.grade)
+        average = total / length
+        return round(average, 2)
+        
+       
+
+    def get_letter_grade(self):
+        
+        average = self.get_average()
+        if isinstance(average, str):
+            return "No letter grade available."
+        
+            
+        if average >= 90:
+            return "A"
+        
+        elif average >= 80:
+            return "B"
+
+        elif average >= 70:
+            return "C"
+
+        elif average >= 60:
+            return "D"
+
+        else:
+            return "F"
+        
+        
+
+    def print_report(self):
+        """
+        TODO:
+        - Print the student report in the following format:
+
+        --- Student Report ---
+        ID: S001
+        Name: Alice
+        Grades: [95, 88, 76]
+        Average: 86.33
+        Letter Grade: B
+        -----------------------
+
+        - Use the other methods (get_average, get_letter_grade)
+          instead of recalculating inside this method.
+        """
+        print (f"\n--- Student Report ---")
+        print (f"ID: {self.ID}")
+        print (f"Name: {self.name}")
+        print (f"Grades: {self.grade}")
+        print (f"Average: {self.get_average()}")
+        print (f"Letter Grade: {self.get_letter_grade()}")
+        print (f"-----------------------\n")
+
+
+# ---------------- Main Function ----------------
+# DO NOT MODIFY
+def main():
+    # Create two students
+    s1 = Student("Alice")
+    s2 = Student("Brian")
+
+    # Add valid grades for Alice
+    s1.add_grade(95)
+    s1.add_grade(88)
+    s1.add_grade(76)
+
+    # Attempt invalid grade
+    s1.add_grade(-5)
+
+    # Add valid grades for Brian
+    s2.add_grade(100)
+    s2.add_grade(92)
+    s2.add_grade(85)
+
+    # Attempt invalid grade
+    s2.add_grade(120)
+
+    # Print reports
+    s1.print_report()
+    s2.print_report()
+
+
+# run main
+if __name__ == "__main__":
+    main()

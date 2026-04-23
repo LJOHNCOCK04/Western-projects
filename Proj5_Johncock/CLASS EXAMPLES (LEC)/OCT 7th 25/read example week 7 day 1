@@ -1,0 +1,16 @@
+def main():
+    # Open a file
+    input_file=open("names.txt",'r')
+
+    # Process the file
+    line1 = input_file.readline()
+    line2 = input_file.readline()
+    line3 = input_file.readline()
+
+    print(line1)
+    # Close the file
+    input_file.close()
+
+
+if __name__== '__main__':
+    main()

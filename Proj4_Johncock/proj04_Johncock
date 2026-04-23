@@ -1,0 +1,78 @@
+#project 4
+# Leemon Johncock
+# This program updates a bank's customers master file based on the inputs of the user. 
+# It reads from the old prefix file and will writes to the new one with updated information from the user.
+import os
+
+# Functions:
+
+def file_prefix_confrimation(file_prefix):
+    old_file = f'{file_prefix}_old.txt'
+    new_file = f"{file_prefix}_new.txt"
+
+    if os.path.exists(old_file):
+        print(f"the file name {old_file} does not exist.")
+        return None, None
+    return old_file, new_file
+
+def get_number(line):
+    parts = line.split()
+    return int(parts[0])
+            
+def get_balance(line):
+    parts = line.split()
+    return float(parts)[1]
+
+def get_name(line):
+    parts = line.split(maxsplit=2)
+    return parts[2] if len (parts) > 2 else ""
+        
+def main():
+    file_prefix = input("Enter a file prefix: ").strip()
+    old_file_name, new_file_name = file_prefix_confrimation(file_prefix)
+    try:
+        with open('customers_old.txt', 'r') as old_file, open('customers_new.txt', 'w') as new_file:
+    
+            confrimation=file_prefix_confrimation(file_prefix)
+            if confrimation == str:
+                print (confrimation)
+                
+
+            command = input("Enter a command (a,c,d,w): ")
+            
+            if command == "c":
+                print("account is closed")
+
+                
+            elif command == 'w':
+                 while True:
+                    try:
+                        with_amount = input("Enter withdrawl amount: ")
+                        if with_amount <= 0:
+                            print("please enter a numeric value greater than 0.")
+                            continue
+                        break
+                    except ValueError:
+                        print('INVALID InPUT: Please enter a numeric value.')
+                print(f"New Balance")
+                    
+        elif command == 'd':
+                depo_amount = input("Enter deposit amount: ")
+
+                while depo_amount != float:
+                    print('INVALID INPUT: Please enter a numeric value.')
+                    depo_amount = input("Enter deposit amount: ")
+
+                while depo_amount <=0:
+                    print("please enter a numeric value greater than 0.")
+                    depo_amount = input("Enter deposit amount: ")
+
+            elif command == 'a':
+        #closing both file to ensure the safety of the file.
+            old_file.close()
+            new_file.close()
+    except FileNotFoundError:
+        print(f'Error: could not open {file_prefix}_old.txt')        
+
+if __name__ == "__main__":
+    main()

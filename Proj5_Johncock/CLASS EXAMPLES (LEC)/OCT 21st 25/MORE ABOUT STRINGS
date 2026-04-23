@@ -1,0 +1,12 @@
+#leemon Johncock
+
+
+#Q1
+def program_numbers():
+    numbers=input("Enter your series of numbers: ")
+
+    total = 0
+    for character in numbers:
+        num = int(character)
+        total+= num
+print(f'the sum is {total}')

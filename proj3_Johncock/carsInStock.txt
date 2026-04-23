@@ -1,0 +1,8 @@
+D Ford F150 2012 17000 Truck MI
+I Toyota Camry 2014 20000 Sedan Japan 10
+D Chrysler Pacifica 2013 18000 Sedan TX
+I BMW 325i 2013 30000 Sedan Germany 8
+D Chevrolet TahoeLS 2010 7000 Coup TX
+D Chevrolet Silverado 2011 10000 Van MI
+I Toyota LexusRX30 2015 42000 Sedan Japan 10
+D Ford Econoline 2012 16000 Sedan MI

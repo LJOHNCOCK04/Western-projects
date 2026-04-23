@@ -1,0 +1,54 @@
+#SETS
+#LEEMON JOHNCOCK
+#PYTHON 1
+
+def sets():
+    set1=set([1,2,3,3,3])
+    print(set1)
+
+def sets_ADDING():
+    set1=set([1,2,3,3,3])
+    set1.add(4)
+    print(set1)
+
+
+#can create tuple with []
+# can create dict with {}
+    set2={5,6,7,8,9,10}
+    set1.update(set2)
+    print(set1)
+
+def sets_REMOVE_DISCARD():
+    set1=set([1,2,3,3,3])
+    set1.add(4)
+# discard is more dangerous because it doesnt show anything even if the thing you want to discared isnt there
+# Remove is better option
+    set1.remove(10)
+    set1.discard(10)
+    print(set1)
+
+def sets_BUILT_IN_FUNCTIONS():
+    set1=set([1,2,3,3,3])
+    set2={3,4,1,0}
+    # USING UNION WITH BAR
+    print(set1 | set2)
+    #USING INTERSECTION ##ONLY SHARED ELEMENTS
+    print(set1 & set2)
+    #USING DEFFERCENCE ## show element in set1 that is not in set2
+    print(set1 - set2)
+    #USING SYMMETRIC DIFFERENCE ## shows elements that are not shared between the two
+    print(set1 ^ set2)
+
+def sets5():
+    set1=set{1,2,3,4,5}
+    set2={3,4,1,0}
+# WILL CHECK IF ALL THE ELEMENTS IN SET2 APPEAR IN SET1. retrun BOOLEAN VALUE(TRUE/FALSE)
+    print(set2.issubset(set1))
+    print(set1.issuperset(set2))
+
+
+
+
+def main():
+    )
+main()

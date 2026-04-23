@@ -1,0 +1,61 @@
+#Leemon JOhncock
+# NOV 11th 
+# Python 1
+# Lab 10
+# CS 1110 - COMPUTER SCIENCE I LAB
+# LAB EXERCISE: Sets and Dictionaries Practice
+
+# QUESTION 1: Set Practice
+def set_operations():
+
+    set_A = {1,3,5,7,9}
+    set_B = {2,3,5,7,11}
+    Union = set_A | set_B
+    intersection = set_A & set_B 
+    differece = set_A - set_B
+    symmetric_difference = set_A ^ set_B
+
+    print(f"union: {Union} ")
+    print(f"Intersection: {intersection}")
+    print(f"Difference (A-B): {differece}")
+    print(f"Symmetric Difference: {symmetric_difference} \n")  
+    
+   
+
+
+# QUESTION 2: Dictionary Practice
+def dictionary_practice():
+    
+    
+    book = {
+        "title" : "Python Basics",
+        "price" : "$25.99",
+    }
+    print(f"{book.get('title')}-{book.get('price')}\n")
+
+    book = {
+        "title" : "Python Basics",
+        "price" : "$19.99",
+        "year"  : "2024",
+    }
+    book2 = {
+        "title" : "The Hunger Games",
+        "price" : "$11.24",
+        "year"  : "2010"
+    }
+    library =[book, book2]
+    for book in library:
+        print (f"{book.get('title')}({book.get('year')})-{book.get('price')} ")
+   
+
+
+# MAIN FUNCTION
+def main():
+    
+    set_operations()
+    dictionary_practice()
+    
+
+# RUN PROGRAM
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,69 @@
+#class example blank
+#October 21st 2025 
+#Leemon Johncock
+def st():
+    st= 'CS1110'
+    #print(st)
+    #print(st[5])
+    print(st[len (st)-1])
+
+
+def counting_letters_in_sentence(): # similar to what will be on quiz 3!!!!!!!!!!!!!!!!!!!
+    # Create a variable to use to hold the count.
+    # The variable must start with 0.
+    count = 0
+
+    # Get a string from the user.
+    my_string = input('Enter a sentence: ')
+
+    # Count the Ts.
+    for ch in my_string:
+        if ch == 'T' or ch  == 't':
+            count += 1
+
+    # Print the result.
+    print('The letter T appears', count, 'times.')
+    #call main fuction
+#counting_letters_in_sentence()
+
+def st_2(): # index starts from 0 
+    st='CS 1110'
+    print(st[2])
+
+
+def st_3():
+    st1='Alice'
+    st2='Brown'
+    print(st1+st2)
+
+def st_4():
+    st1 = "CS1110"
+    st1[4]= "2"  # this will result in a type error
+    # so if you want to change one character then you have to change the whole thing:
+    st1 = "CS1120"
+
+def st_5():
+    st1='CS1110'
+    st2=st1[2::6] # there is anditional vaule called step value this is when you will use double : 
+    print(st2)
+
+
+def st_6():
+    st1='CS1110'
+    st2=st1[::2] # there is anditional vaule called step value this is when you will use double : 
+    print(st2)
+
+def st_7():
+    st1='CS1110'
+
+    if 'cs'in st1:
+        print('cs is in st1\n')
+
+    if 'Cs' not in st1:
+        print('Cs is not in st1\n')
+
+def st_8():
+    st1='cs1110' # this will be true
+    print (st1.isalnum())
+    st2='cs11 10'   # this will be false
+    print (st2.isalnum())

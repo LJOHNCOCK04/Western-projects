@@ -1,0 +1,34 @@
+def count_vowels(text):
+    vowel = "aeiou"
+    count=0
+    for char in text.lower():
+        if char in vowel:
+            count+=1
+    return count
+    
+def main():
+    max_word =""
+    max_count = -1
+    
+    count=0
+
+    while count < 5:
+        count+=1
+        word=input(f"enter word {count}: ")
+        vowel_count=count_vowels(word)
+        
+        if vowel_count > max_count:
+            max_count = vowel_count
+            max_word=word
+    vowel_count=count_vowels(max_word)    
+
+
+
+    
+
+    print(f"the word with the most vowels is '{max_word}' with {vowel_count} vowels.")
+        
+
+
+    
+main()

@@ -1,0 +1,13 @@
+def main():
+    infile=open('numbers.txt', 'r')
+    result=0
+
+    for line in infile:
+        result+= int(line)
+
+    infile.close()    
+    print(result)
+
+
+if __name__ == '__main__':
+    main()
